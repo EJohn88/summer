@@ -419,7 +419,14 @@ function getmax() {
     //console.log(typeof temp[0]);
     url.searchParams.append('score', maxvalue); //puts all of allvalues though
 
-        function findMaxIndex(element) {
+   var total = 0;
+        for(var j = 0; j < temp.length; j++) {
+        total += temp[j];
+        }
+        var avg = (total / temp.length).toFixed(2);   
+        url.searchParams.append('avg', avg);     
+   
+   function findMaxIndex(element) {
         return element == maxvalue;
         }
 
